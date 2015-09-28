@@ -12,7 +12,7 @@ Then restart (not reload) Apache:
 sudo service apache2 restart
 
 ### Exampe virtual host file
-
+```
 <VirtualHost *:80>
         ServerAdmin webmaster@example.com
         ServerName  mysite.jlocal
@@ -35,3 +35,4 @@ sudo service apache2 restart
         CustomLog /home/vagrant/code/mysite/access.log common
 
 </VirtualHost>
+```
