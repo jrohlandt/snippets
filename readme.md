@@ -1,5 +1,18 @@
 # Apache
 
+### Change Apache user:
+
+sudo vim /etc/apache2/envvars
+Change Apache runs as user/group "vagrant" instead of "www-data":
+
+export APACHE_RUN_USER=vagrant
+export APACHE_RUN_GROUP=vagrant
+
+Then restart (not reload) Apache:
+sudo service apache2 restart
+
+### Exampe virtual host file
+
 <VirtualHost *:80>
         ServerAdmin webmaster@example.com
         ServerName  mysite.jlocal
