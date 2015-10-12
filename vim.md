@@ -1,5 +1,9 @@
 #Vim 
 
+### search
+```
+/yourstring
+```
 ### search and replace
 ```
 :%s/foo/bar/g
