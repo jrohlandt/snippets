@@ -12,3 +12,6 @@ alias vs="vagrant ssh"
 # Git aliases
 
 alias g='git status'
+alias gb='git branch'
+alias gl='git log'
+
