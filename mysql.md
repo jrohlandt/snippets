@@ -5,9 +5,9 @@
 a) Grant privileges. As root user execute:
 ```
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password';
-b) bind to all addresses:
+
 ```
-Then comment out the line in your my.cnf file:
+b) Bind to all addresses, easy way is to comment out the line in your my.cnf file:
 ```
 #bind-address = 127.0.0.1 
 ```
