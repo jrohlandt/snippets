@@ -22,3 +22,13 @@ To check where mysql service has binded execute as root:
 netstat -tupan | grep mysql
 ```
 source: http://stackoverflow.com/questions/11223235/mysql-root-access-from-all-hosts
+
+### Import data from csv file:
+```
+LOAD DATA LOCAL INFILE '/home/yourusername/Downloads/file.csv' 
+INTO TABLE discounts 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+```
