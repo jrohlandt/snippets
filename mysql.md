@@ -23,6 +23,15 @@ netstat -tupan | grep mysql
 ```
 source: http://stackoverflow.com/questions/11223235/mysql-root-access-from-all-hosts
 
+### Export sqldump
+```
+mysqldump -u dbuser -p dbname > desired_filename.sql
+```
+### Import from sqldump
+```
+mysql -u username -ppassword databasename < filename.sql
+```
+
 ### Import data from csv file:
 ```
 LOAD DATA LOCAL INFILE '/home/yourusername/Downloads/file.csv' 
