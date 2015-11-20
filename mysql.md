@@ -27,6 +27,10 @@ source: http://stackoverflow.com/questions/11223235/mysql-root-access-from-all-h
 ```
 mysqldump -u dbuser -p dbname > desired_filename.sql
 ```
+when using lock tables:
+```
+mysqldump -u dbuser -p dbname > desired_filename.sql --single-transaction
+```
 ### Import from sqldump
 ```
 mysql -u username -ppassword databasename < filename.sql
