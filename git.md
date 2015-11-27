@@ -21,7 +21,10 @@ git commit --amend -m  "new message"
 ```
 git diff --name-only SHA1 SHA2
 ```
-
+### Undo last commit
+```
+git reset --soft HEAD~
+```
 ## Branches
 ### List merged branches
 ```
