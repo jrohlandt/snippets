@@ -1,5 +1,8 @@
 # MySQL
 
+### Reset Root Password
+http://stackoverflow.com/questions/10895163/how-to-find-out-the-mysql-root-password
+
 ### Grant remote access for root user:
 
 a) Grant privileges. As root user execute:

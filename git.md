@@ -45,6 +45,9 @@ git stash apply stash@{0}
 git stash drop stash@{0}
 ```
 
-
+## Clone
+```
+git clone -b mybranch --single-branch git://sub.domain.com/repo.git
+```
 
 
