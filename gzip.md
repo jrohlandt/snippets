@@ -13,5 +13,5 @@ tar cvzf new-archive-name.tar.gz file-to-be-archived.sql
 
 ### Extract
 ```
-tar -xvzf new-archive-name.tar.gz file-to-be-extracted.tar.gz
+tar -xvzf file-to-be-extracted.tar.gz
 ```
