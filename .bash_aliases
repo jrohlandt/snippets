@@ -2,6 +2,7 @@
 alias c='cd ~/code'
 
 alias snippets='cd ~/code/snippets'
+alias rap='sudo service apache2 restart'
 
 # Vagrant
 alias v='cd ~/vagrants'
