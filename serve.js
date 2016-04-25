@@ -20,7 +20,7 @@ rl.question("Create VirtualHost (y/n)? ", function(answer) {
         } else {
             if (!virtualHost.serverName) {
                 virtualHost.serverName = server.toLowerCase().trim();
-                virtualHost.fileName = server.toLowerCase().trim() + ".conf";
+                virtualHost.fileName = "/home/apache2/sites-avalable/" + server.toLowerCase().trim() + ".conf";
             } else if (!virtualHost.documentRoot) {
                 virtualHost.documentRoot = server.toLowerCase().trim();
                 console.log("Creating VirtualHost...");
