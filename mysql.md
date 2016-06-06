@@ -49,7 +49,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 ```
 
-### Change the colation for tables to utf 8 ( also changes engine to innodb (optional))
+### Change the collation for tables to utf 8 ( also changes engine to innodb (optional))
 ```
 SET @mycollate = 'utf8_general_ci';
 SET @mycharset = 'utf8';
