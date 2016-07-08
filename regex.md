@@ -12,7 +12,7 @@ Matches file1.txt and file2.txt but not file3_txt.zip
 /\/home\/simba\/notes\.txt/g
 /home/simba/notes.txt
 ```
-## Character sets
+## Character Sets and Ranges 
 ```
 /gr[ae]y/g
 grey gray
@@ -21,11 +21,18 @@ grey gray
 /gr[ea][ea]t/
 great graet greet graat
 ```
-## Character ranges
 ```
 [0-9] [5-8] [A-Za-z] [A-Za-z0-9_] [a-cg-my-z]
 ```
 ```
 /[0-9][0-9][0-9] [0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]/
 021 590-7777 031 580-9999
+```
+```
+[0-9][0-9][A-Za-z][A-Za-z][A-Za-z]
+71abc 31tcu
+```
+```
+/[6-9][01][A-Za-z][A-Za-z][A-Za-z]/g
+71abc 70tcu 61abc 91bzn
 ```
