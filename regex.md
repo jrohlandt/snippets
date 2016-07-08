@@ -12,5 +12,13 @@ Matches file1.txt and file2.txt but not file3_txt.zip
 /\/home\/simba\/notes\.txt/g
 /home/simba/notes.txt
 ```
-
-
+## Character sets
+```
+/gr[ae]y/g
+grey gray
+```
+```
+/gr[ea][ea]t/
+great graet greet graat
+```
+## Character ranges
