@@ -36,3 +36,10 @@ great graet greet graat
 /[6-9][01][A-Za-z][A-Za-z][A-Za-z]/g
 71abc 70tcu 61abc 91bzn
 ```
+## Negative Character Sets
+```
+see[^mn]
+Matches seek and sees  but not seem seen
+```
+## Metacharacters inside Character Sets
+Inside a character set metacharacters do not need to be escaped with the exception of ] - ^ \
