@@ -43,3 +43,7 @@ Matches seek and sees  but not seem seen
 ```
 ## Metacharacters inside Character Sets
 Inside a character set metacharacters do not need to be escaped with the exception of ] - ^ \
+```
+value[[()][0-9][\])]
+value(5) value[7]
+```
