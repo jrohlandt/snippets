@@ -62,9 +62,19 @@ Matches bicycle bicycles bicyclesssss
 + one or more times 
 /bicycles+/g 
 Matches bicycles bicyclessssss but not bicycle
+
+/\d\d\d+/g
+Match numbers with 3 digits or more e.g. 123 and 123456789109840384300
 ```
 ```
 ? zero or one time
 /bicycles?/g
 Matches bicycle bicycles but not bicyclesss
+
+/colou?r/g
+Matches color and colour 
+```
+```
+/[a-z]+[0-9][a-z]*/g
+Matches a2 abc2 abc2abc but not 2a
 ```
