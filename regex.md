@@ -50,6 +50,21 @@ value(5) value[7]
 ## Repetition Metacharacters
 ```
 * zero or more times
-+ one or more times
++ one or more times 
 ? zero or one time
+```
+```
+* zero or more times
+/bicycles*/g
+Matches bicycle bicycles bicyclesssss
+```
+```
++ one or more times 
+/bicycles+/g 
+Matches bicycles bicyclessssss but not bicycle
+```
+```
+? zero or one time
+/bicycles?/g
+Matches bicycle bicycles but not bicyclesss
 ```
