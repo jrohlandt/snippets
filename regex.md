@@ -78,3 +78,9 @@ Matches color and colour
 /[a-z]+[0-9][a-z]*/g
 Matches a2 abc2 abc2abc but not 2a
 ```
+```
+Find words ending with s
+/\w+s/g
+bicycles birds
+```
+## Quantified Repetition
