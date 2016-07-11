@@ -47,3 +47,9 @@ Inside a character set metacharacters do not need to be escaped with the excepti
 value[[()][0-9][\])]
 value(5) value[7]
 ```
+## Repetition Metacharacters
+```
+* zero or more times
++ one or more times
+? zero or one time
+```
