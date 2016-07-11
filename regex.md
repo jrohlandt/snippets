@@ -84,3 +84,17 @@ Find words ending with s
 bicycles birds
 ```
 ## Quantified Repetition
+```
+{min,max}
+```
+```
+\d{5,9} matches numbers with 5 to 9 digits
+\d{5} matches numbers with exactly 5 digits
+\d{5,} matches numbers with 5 or more digits
+```
+```
+\d{0,} is the same as \d*
+\d{1,} is the same as \d+
+\d{3}-\d{3}-\d{4} match phone number
+/A{1,2} bicycles/g matches A bicycles and AA bicycles but not AAA bicycles 
+```
