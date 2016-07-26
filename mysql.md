@@ -7,7 +7,7 @@ http://stackoverflow.com/questions/10895163/how-to-find-out-the-mysql-root-passw
 
 a) Grant privileges. As root user execute:
 ```
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'yourp@55word';
 
 ```
 b) Bind to all addresses, easy way is to comment out the line in your my.cnf file:
