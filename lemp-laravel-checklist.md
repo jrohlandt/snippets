@@ -8,7 +8,7 @@
 
 ### 5. install composer and npm dependencies
 
-### 6. permissions for required folders
+### 6. permissions for required folders (create a storage/logs/laravel.log file before setting permissions)
 
 ### 7. create .env fill in db details
 
