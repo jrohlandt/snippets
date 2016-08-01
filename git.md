@@ -5,6 +5,8 @@
 ### Remove file from staging:
 ```
 git reset HEAD filename.php
+
+git reset HEAD -- .
 ```
 
 ### Discard unstaged changes
