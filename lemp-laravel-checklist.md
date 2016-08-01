@@ -1,4 +1,4 @@
-## 1. Create laravel project 
+### 1. Create laravel project 
 
 ## 2. Create server block file which points to laravel public dir
 
