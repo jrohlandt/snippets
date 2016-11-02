@@ -8,6 +8,7 @@ alias rap='sudo service apache2 restart'
 alias v='cd ~/vagrants'
 alias vu="vagrant up"
 alias vh="vagrant halt"
+alias vr="vagrant reload"
 alias vs="vagrant ssh"
 
 # Git aliases
