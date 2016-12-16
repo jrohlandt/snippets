@@ -14,6 +14,12 @@ git reset HEAD -- .
 git checkout -- .
 ```
 
+## Remote
+### Change remote url
+```
+git set-url origin ssh://yourrepo.git
+```
+
 ## Commit
 ### Amend commit message
 ```
