@@ -31,7 +31,7 @@ function tweeter_install() {
     require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
     dbDelta( $sql );
 
-    add_option( "tweeter_db_version", "1.0");
+    add_option( "tweeter_db_version", $tweeter_db_version);
 }
 
 function tweeter_install_data() {
