@@ -2,7 +2,7 @@
 
 ## Get a list of file formats:
 ```
-main64@mycomputerok:~$ /usr/local/bin/youtube-dl -F https://www.youtube.com/watch?v=2UlBzmRigOU
+main64@mycomputerok:~$ /usr/local/bin/youtube-dl -F "https://www.youtube.com/watch?v=2UlBzmRigOU"
 [youtube] 2UlBzmRigOU: Downloading webpage
 [youtube] 2UlBzmRigOU: Downloading video info webpage
 [youtube] 2UlBzmRigOU: Extracting video information
@@ -31,6 +31,6 @@ format code  extension  resolution note
 ```
 ## Then download selected format (in this case m4a 140):
 ```
-main64@mycomputerok:~$ /usr/local/bin/youtube-dl https://www.youtube.com/watch?v=2UlBzmRigOU -f 140
+main64@mycomputerok:~$ /usr/local/bin/youtube-dl "https://www.youtube.com/watch?v=2UlBzmRigOU" -f 140
 
 ```
