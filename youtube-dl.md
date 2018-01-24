@@ -1,5 +1,16 @@
 # YOUTUBE-DL
 
+## Install latest version
+```
+sudo apt-get autoremove --purge youtube-dl
+```
+```
+curl -L https://yt-dl.org/latest/youtube-dl -o /usr/bin/youtube-dl
+```
+```
+sudo chmod 755 /usr/bin/youtube-dl
+```
+
 ## Get a list of file formats:
 ```
 main64@mycomputerok:~$ /usr/local/bin/youtube-dl -F "https://www.youtube.com/watch?v=2UlBzmRigOU"
