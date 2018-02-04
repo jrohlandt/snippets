@@ -66,3 +66,5 @@ FFmpeg also gives you the facility to multiplex/demultiplex audio and video file
 $  ffmpeg -i audio.mp3 -i video.avi video_audio_mix.mpg
  
 The above command will multiplex an mp3 audio file titled, “audio” with an avi video file titled, “video.” The resultant muxed file will be in .mpg format.
+
+### Concatenating files: https://trac.ffmpeg.org/wiki/Concatenate
