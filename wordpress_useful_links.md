@@ -1,3 +1,5 @@
+- Theme development: https://codex.wordpress.org/Theme_Development
+
 - WP Config: https://codex.wordpress.org/Editing_wp-config.php
 
 - File Headers: https://codex.wordpress.org/File_Header
@@ -22,7 +24,37 @@
 
 - get search form: https://developer.wordpress.org/reference/functions/get_search_form/
 
-- the loop: https://codex.wordpress.org/The_Loop
+- The Loop: https://codex.wordpress.org/The_Loop
+
+- Template Tags: https://codex.wordpress.org/Template_Tags
+
+- Pagination: https://codex.wordpress.org/Pagination
+
+- Template Hierarchy: https://developer.wordpress.org/themes/basics/template-hierarchy/
+
+- https://wphierarchy.com/
+
+- comment form: https://codex.wordpress.org/Function_Reference/comment_form
+
+- the author meta: https://codex.wordpress.org/Function_Reference/the_author_meta
+
+- get avarar: https://codex.wordpress.org/Function_Reference/get_avatar
+
+- WP Query: https://codex.wordpress.org/Class_Reference/WP_Query
+
+- Global $post: https://codex.wordpress.org/Function_Reference/$post
+
+- wp reset postdata: https://codex.wordpress.org/Function_Reference/wp_reset_postdata
+
+
+
+
+
+
+
+
+
+
 
 
 
