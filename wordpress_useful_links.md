@@ -46,6 +46,18 @@
 
 - wp reset postdata: https://codex.wordpress.org/Function_Reference/wp_reset_postdata
 
+- rewind posts: https://codex.wordpress.org/Function_Reference/rewind_posts
+
+- WP Subtitle Plugin: https://wordpress.org/plugins/wp-subtitle/
+
+- the archive title: https://developer.wordpress.org/reference/functions/the_archive_title/
+
+- get template part: https://developer.wordpress.org/reference/functions/get_template_part/
+
+- page templates: https://developer.wordpress.org/themes/template-files-section/page-template-files/
+
+- bloginfo function: https://developer.wordpress.org/reference/functions/bloginfo/
+
 
 
 
