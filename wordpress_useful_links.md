@@ -12,6 +12,8 @@
 
 - wp register script: https://developer.wordpress.org/reference/functions/wp_register_script/
 
+- Core Registerd Scripts: https://developer.wordpress.org/reference/functions/wp_register_script/#core-registered-scripts
+
 - add theme support: https://developer.wordpress.org/reference/functions/add_theme_support/
 
 - register nav menu: https://codex.wordpress.org/Function_Reference/register_nav_menu
