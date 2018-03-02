@@ -60,6 +60,19 @@
 
 - bloginfo function: https://developer.wordpress.org/reference/functions/bloginfo/
 
+- Adsense Plugin: https://wordpress.org/plugins/quick-adsense-reloaded/
+
+- WP Customize Manager Class: https://codex.wordpress.org/Class_Reference/WP_Customize_Manager
+
+- add_setting: https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_setting
+
+- add_control: https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_control
+
+- Starter Content: https://make.wordpress.org/core/2016/11/30/starter-content-for-themes-in-4-7/
+
+- Post Formats: https://developer.wordpress.org/themes/functionality/post-formats/
+
+- Conditional Tags: https://codex.wordpress.org/Conditional_Tags
 
 
 
