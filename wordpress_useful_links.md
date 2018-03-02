@@ -74,6 +74,8 @@
 
 - Conditional Tags: https://codex.wordpress.org/Conditional_Tags
 
+- Popular Posts Plugin: https://wordpress.org/plugins/wordpress-popular-posts/
+
 
 
 
