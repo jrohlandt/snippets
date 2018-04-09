@@ -1,0 +1,11 @@
+{
+     // Configures if the built-in PHP language suggestions are enabled. The support suggests PHP globals and variables.
+  "php.suggest.basic": false,
+  "workbench.colorTheme": "Slime",
+  "explorer.openEditors.visible": 0,
+  "editor.fontFamily": "'Source Code Pro', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontSize": 14,
+  "editor.fontWeight": "normal",
+  "editor.lineHeight": 25
+
+}
