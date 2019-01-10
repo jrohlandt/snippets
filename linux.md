@@ -1,4 +1,13 @@
 #Linux 
+### Add additional swapfile
+https://askubuntu.com/a/927909
+```
+dd if=/dev/zero of=/some/file count=1K bs=1M
+mkswap /some/file
+sudo chown root:root /some/file
+sudo chmod 600 /some/file
+sudo swapon /some/file
+```
 
 ### create symbolic link:
 ```
