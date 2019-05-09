@@ -4,7 +4,7 @@
 ## Staging
 ### Remove file from staging:
 ```
-git reset HEAD filename.php
+git reset HEAD filename.php (and then to ignore it git rm --cached <file>)
 
 git reset HEAD -- .
 ```
