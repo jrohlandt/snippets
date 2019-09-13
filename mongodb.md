@@ -45,4 +45,8 @@ Retrieve a specific document:
 db.products.find("5d79eafd72aa234f754a9562")
 ```
 
+Import document or documents:
+```
+mongoimport exported-users.json -d myDatabase -c  users --jsonArray --drop
+```
 
