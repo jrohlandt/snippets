@@ -30,27 +30,27 @@ use myshop
 show collections
 ```
 
-Insert a document into a collection (new collection will be created on the fly):
+**Insert a document into a collection:**
 ```
 db.products.insertOne({name: "New book", price: 13.99, description: "It's good!", author: { first_name: "John", last_name: "Smith"}})
 ```
 
-Retrieve all documents in a collection:
+**Retrieve all documents in a collection:**
 ```
 db.products.find() or db.products.find().pretty()
 ```
 
-Retrieve a specific document:
+**Retrieve a specific document:**
 ```
 db.products.find({_id: ObjectId("5d79eafd72aa234f754a9562")})
 ```
 
-Import document or documents:
+**Import document or documents:**
 ```
 mongoimport exported-users.json -d myDatabase -c  users --jsonArray --drop
 ```
 
-# Update Operations
+## Update Operations
 
 
 
