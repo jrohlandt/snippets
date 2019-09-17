@@ -68,7 +68,8 @@ Collection for demonstration:
 			"hoursPerWeek" : 6
 		}
 	],
-	availableHobbyHoursPerWeek: 24
+	availableHobbyHoursPerWeek: 24,
+	"phone" : "00000000000000"
 }
 {
 	"_id" : ObjectId("5d80b87d6ee7f959449f51c5"),
@@ -79,7 +80,8 @@ Collection for demonstration:
 			"hoursPerWeek" : 4
 		}
 	],
-	availableHobbyHoursPerWeek: 16
+	availableHobbyHoursPerWeek: 16,
+	"phone" : "00000000000000"
 	
 }
 ```
@@ -107,6 +109,27 @@ Also assume that users must at least allocate 20 hobby hours per week. Then **$m
 Jane only has 17 hours allocated so the following query will set her allocated hours to 20:
 ```
 db.users.updateMany({}, {$max: {availableHobbyHoursPerWeek: 20}})
+```
+
+**Remove ($unset) a field:**
+```
+db.users.updateMany({}, {$unset: {phone: ""}})
+```
+
+**Rename fields:**
+```
+db.users.updateMany({}, {$rename: {birthday: "birthDate"}})
+```
+
+**Update or create (upsert):**
+```
+db.users.updateOne({name: "jim"}, {$set: {hobbies: [{title: "cars", hoursPerWeek: 20}]}}, {upsert: true})
+```
+
+### Update nested arrays:
+
+```
+db.users.updateMany({'hobbies.title': 'photography'}, {$set: {'hobbies.$.title': 'Photography'}})
 ```
 
 
