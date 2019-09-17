@@ -15,17 +15,17 @@ mongo --port 27018
 cls
 ```
 
-**Show databases:
+**Show databases:**
 ```
 show dbs
 ```
 
-**Switch to or create a database (will only be created when inserting data):
+**Switch to or create a database (will only be created when inserting data):**
 ```
 use myshop
 ```
 
-**Show collections in current database:
+**Show collections in current database:**
 ```
 show collections
 ```
