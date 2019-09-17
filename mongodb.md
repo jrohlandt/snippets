@@ -67,7 +67,8 @@ Collection for demonstration:
 			"title" : "rugby",
 			"hoursPerWeek" : 6
 		}
-	]
+	],
+	availableHobbyHoursPerWeek: 24
 }
 {
 	"_id" : ObjectId("5d80b87d6ee7f959449f51c5"),
@@ -77,14 +78,39 @@ Collection for demonstration:
 			"title" : "hiking",
 			"hoursPerWeek" : 4
 		}
-	]
+	],
+	availableHobbyHoursPerWeek: 16
+	
 }
 ```
 
-**Update a field** (overwrites the existing hobbies array):
+**Update fields** (overwrites the hobbies array and adds birthday field):
 ```
-db.users.updateOne({_id: ObjectId("5d80b8476ee7f959449f51c4")}, {$set: {hobbies: [{title: "photography", hoursPerWeek: 5}]}})
+db.users.updateOne({_id: ObjectId("5d80b8476ee7f959449f51c4")}, {$set: {hobbies: [{title: "photography", hoursPerWeek: 5}], birthday: new Date("1981-05-16T16:00Z")}})
 
 ```
+
+**Increment a field:**
+```
+db.users.updateMany({}, {$inc: {availableHobbyHoursPerWeek: 1}})
+```
+So now John will have 25 hours allocated and Jane will have 17.
+
+**$min and $max:**
+Assume users are not allowed more than 24 hobby hours per week. In that case **$min** can be used to see if any user has more than 24 hours allocated and if so set the value to the maximum allowed hours.
+john has 25 hours (his hours was incremented earlier) so the below query will set his available hours to 24.
+```
+db.users.updateMany({}, {$min: {availableHobbyHoursPerWeek: 24}})
+```
+
+Also assume that users must at least allocate 20 hobby hours per week. Then **$max** can be used to make sure that the availableHobbyHoursPerWeek field is set to a minimum of 20. 
+Jane only has 17 hours allocated so the following query will set her allocated hours to 20:
+```
+db.users.updateMany({}, {$max: {availableHobbyHoursPerWeek: 20}})
+```
+
+
+
+
 
 
