@@ -53,6 +53,38 @@ mongoimport exported-users.json -d myDatabase -c  users --jsonArray --drop
 
 ## Update Operations  
 
+Collection for demonstration:
+```
+{
+	"_id" : ObjectId("5d80b8476ee7f959449f51c4"),
+	"name" : "john",
+	"hobbies" : [
+		{
+			"title" : "cars",
+			"hoursPerWeek" : 12
+		},
+		{
+			"title" : "rugby",
+			"hoursPerWeek" : 6
+		}
+	]
+}
+{
+	"_id" : ObjectId("5d80b87d6ee7f959449f51c5"),
+	"name" : "jane",
+	"hobbies" : [
+		{
+			"title" : "hiking",
+			"hoursPerWeek" : 4
+		}
+	]
+}
+```
 
+**Update a field** (overwrites the existing hobbies array):
+```
+db.users.updateOne({_id: ObjectId("5d80b8476ee7f959449f51c4")}, {$set: {hobbies: [{title: "photography", hoursPerWeek: 5}]}})
+
+```
 
 
