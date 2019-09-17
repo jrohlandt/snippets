@@ -1,4 +1,4 @@
-###MongoDB
+# MongoDB
 
 Start server with different dbpath and port number:
 ```
@@ -10,22 +10,22 @@ Then access it by starting the Mongo client and specifying the port number:
 mongo --port 27018
 ```
 
-Clear screen:
+**Clear screen:
 ```
 cls
 ```
 
-Show databases:
+**Show databases:
 ```
 show dbs
 ```
 
-Switch to or create a database (will only be created when inserting data):
+**Switch to or create a database (will only be created when inserting data):
 ```
 use myshop
 ```
 
-Show collections in current database:
+**Show collections in current database:
 ```
 show collections
 ```
