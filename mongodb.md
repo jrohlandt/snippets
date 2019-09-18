@@ -88,7 +88,7 @@ Collection for demonstration:
 
 **Update fields** (overwrites the hobbies array and adds birthday field):
 ```
-db.users.updateOne({_id: ObjectId("5d80b8476ee7f959449f51c4")}, {$set: {hobbies: [{title: "photography", hoursPerWeek: 5}], birthday: new Date("1981-05-16T16:00Z")}})
+db.users.updateOne({_id: ObjectId("5d80b8476ee7f959449f51c4")}, {$set: {hobbies: [{title: "photography", hoursPerWeek: 5}, {title: 'soccer', hoursPerWeek: 6}], birthday: new Date("1981-05-16T16:00Z")}})
 
 ```
 
@@ -126,10 +126,25 @@ db.users.updateMany({}, {$rename: {birthday: "birthDate"}})
 db.users.updateOne({name: "jim"}, {$set: {hobbies: [{title: "cars", hoursPerWeek: 20}]}}, {upsert: true})
 ```
 
-### Update nested arrays:
+### Updating arrays:
 
+**Update array elements:**
 ```
 db.users.updateMany({'hobbies.title': 'photography'}, {$set: {'hobbies.$.title': 'Photography'}})
+```
+
+**Update all array elements:**
+With the query below we add an new key value pair named "equipment" to each object in the hobbies array of each user.
+In this case equipment is just an empty array.
+```
+db.users.updateMany({}, {$set: {"hobbies.$[].equipment": []}})
+```
+
+**Update specific array elements (arrayFilters):**
+Now let's say that users are only allowed 4 hours per week for soccer. We can change the hoursPerWeek property on all hobbies objects that has a title of soccer.
+```
+db.users.updateMany({}, {$set: {"hobbies.$[el].hoursPerWeek": 4}}, {arrayFilters: [{"el.title": {$eq: "soccer"}}]})
+
 ```
 
 
