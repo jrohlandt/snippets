@@ -172,6 +172,20 @@ db.users.updateOne(
 )
 ```
 
+**Removing array array elements:**
+```
+db.users.updateOne({name: 'jane'}, {$pull: {hobbies: {title:  "video games"}}})
+
+// another example 
+db.users.updateOne({name: 'jane'}, {$pull: {hobbies: {$gt: {hoursPerWeek: 5}}}})
+
+// remove last element
+db.users.updateOne({name: 'jane'}, {$pop: {hobbies: 1}})
+
+// remove first element
+db.users.updateOne({name: 'jane'}, {$pop: {hobbies: -1}})
+```
+
 
 
 
