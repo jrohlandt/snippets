@@ -147,6 +147,31 @@ db.users.updateMany({}, {$set: {"hobbies.$[el].hoursPerWeek": 4}}, {arrayFilters
 
 ```
 
+**Adding an array element:**
+```
+db.users.updateOne({name: "jane"}, {$push: {hobbies: {title: 'soccer', hoursPerWeek: 4, equipment: []}}})
+```
+
+**Adding multiple array elements:**
+Additional functions like $sort and $slice can also be passed in.
+In this case we $sort all hobbies by hours per week (even existing hobbies will be sorted).
+```
+db.users.updateOne(
+    {name: "jane"}, 
+    {
+        $push: {
+	    hobbies: {
+                $each: [
+		    {title: 'painting', hoursPerWeek: 10, equipment: ['paint', 'paint brushes']}, 
+		    {title: 'video games', hoursPerWeek: 6, equipment: ['ps4']}
+		], 
+		$sort: {hoursPerWeek: -1} 
+	    }
+	}
+     }
+)
+```
+
 
 
 
