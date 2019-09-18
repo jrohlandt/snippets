@@ -172,7 +172,16 @@ db.users.updateOne(
 )
 ```
 
-**Removing array array elements:**
+**Adding only unique documents ($addToSet):**
+```
+db.users.updateOne({name: 'john'}, {$addToSet: {hobbies: {title: 'rugby', hoursPerWeek: 10}}})
+// running the above value twice will not result in duplicate entries (like with $push), 
+
+// however, if you change any value (e.g. hoursPerWeek to 11) then the query will insert another document.
+db.users.updateOne({name: 'john'}, {$addToSet: {hobbies: {title: 'rugby', hoursPerWeek: 11}}})
+```
+
+**Removing array elements:**
 ```
 db.users.updateOne({name: 'jane'}, {$pull: {hobbies: {title:  "video games"}}})
 
@@ -185,6 +194,8 @@ db.users.updateOne({name: 'jane'}, {$pop: {hobbies: 1}})
 // remove first element
 db.users.updateOne({name: 'jane'}, {$pop: {hobbies: -1}})
 ```
+
+
 
 
 
