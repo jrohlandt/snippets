@@ -49,6 +49,8 @@ db.products.find({_id: ObjectId("5d79eafd72aa234f754a9562")})
 ```
 mongoimport exported-users.json -d myDatabase -c  users --jsonArray --drop
 ```  
+## Query and Projection
+
 
 
 ## Update Operations  
@@ -193,6 +195,58 @@ db.users.updateOne({name: 'jane'}, {$pop: {hobbies: 1}})
 
 // remove first element
 db.users.updateOne({name: 'jane'}, {$pop: {hobbies: -1}})
+```
+
+## Aggregation:
+
+Some examples:
+```
+db.persons.aggregate([
+    { $match: { gender: 'female' } },
+    { $group: { _id: { state: "$location.state" }, totalPersons: { $sum: 1} } },
+    { $sort: { totalPersons: -1 }}
+]).pretty()
+
+db.persons.aggregate([
+    { $match: { 'dob.age': { $gt: 50 } } },
+    {
+      $group: {
+        _id: { gender: '$gender' },
+        numPersons: { $sum: 1 },
+        avgAge: { $avg: '$dob.age' }
+      }
+    },
+    { $sort: { numPersons: -1 } }
+  ]).pretty()
+
+  db.persons.aggregate([
+    { $project: 
+        { 
+            _id: 0, gender: 1, 
+            fullName: { 
+                $concat: [
+                    { $toUpper: {$substrCP: ["$name.first", 0, 1]} },
+                    { 
+                        $substrCP: [
+                            '$name.first', 
+                            1, 
+                            { $subtract: [ { $strLenCP: "$name.first" }, 1 ] }
+                        ] 
+                    },
+                    " ", 
+                    { $toUpper: {$substrCP: ["$name.last", 0, 1]} },
+                    { 
+                        $substrCP: [
+                            '$name.last', 
+                            1, 
+                            { $subtract: [ { $strLenCP: "$name.last" }, 1 ] } 
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+  ]).pretty()
 ```
 
 
