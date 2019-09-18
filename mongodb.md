@@ -153,7 +153,7 @@ db.users.updateOne({name: "jane"}, {$push: {hobbies: {title: 'soccer', hoursPerW
 ```
 
 **Adding multiple array elements:**
-Additional functions like $sort and $slice can also be passed in.
+Optional functions like $sort and $slice can also be passed in.
 In this case we $sort all hobbies by hours per week (even existing hobbies will be sorted).
 ```
 db.users.updateOne(
