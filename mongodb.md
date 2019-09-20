@@ -219,10 +219,50 @@ db.persons.aggregate([
     { $sort: { numPersons: -1 } }
   ]).pretty()
 
-  db.persons.aggregate([
-    { $project: 
+db.persons.aggregate([
+    { 
+        $project: {
+            _id: 0, 
+            name: 1, 
+            email: 1, 
+            location: {
+                type: "Point", 
+                coordinates: [
+                    {
+                        $convert: {
+                            input: '$location.coordinates.longitude',
+                            to: 'double',
+                            onError: 0.0,
+                            onNull: 0.0,
+                        },
+                    },
+                    {
+                        $convert: {
+                            input: '$location.coordinates.latitude',
+                            to: 'double',
+                            onError: 0.0,
+                            onNull: 0.0,
+                        },
+                    }
+                ]
+            },
+            birthDate: {
+                $convert: {
+                    input: '$dob.date',
+                    to: 'date'
+                }
+            }
+        } 
+    },
+    { 
+        $project: 
         { 
-            _id: 0, gender: 1, 
+            _id: 0, 
+            gender: 1, 
+            email: 1,
+            location: 1,
+            birthDate: 1,
+            birthYear: { $isoWeekYear: "$birthDate"},
             fullName: { 
                 $concat: [
                     { $toUpper: {$substrCP: ["$name.first", 0, 1]} },
@@ -245,6 +285,9 @@ db.persons.aggregate([
                 ]
             }
         }
+    },
+    {
+        $sort: { birthYear: -1 }
     }
   ]).pretty()
 ```
