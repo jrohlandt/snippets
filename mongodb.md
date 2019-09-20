@@ -292,6 +292,142 @@ db.persons.aggregate([
   ]).pretty()
 ```
 
+**$push:**
+
+Example data:
+```
+{
+	"_id" : ObjectId("5d84de2dc3088249d192f64e"),
+	"name" : "Max",
+	"hobbies" : [
+		"Sports",
+		"Cooking"
+	],
+	"age" : 29,
+	"examScores" : [
+		{
+			"difficulty" : 4,
+			"score" : 57.9
+		},
+		{
+			"difficulty" : 6,
+			"score" : 62.1
+		},
+		{
+			"difficulty" : 3,
+			"score" : 88.5
+		}
+	]
+}
+{
+	"_id" : ObjectId("5d84de2dc3088249d192f64f"),
+	"name" : "Manu",
+	"hobbies" : [
+		"Eating",
+		"Data Analytics"
+	],
+	"age" : 30,
+	"examScores" : [
+		{
+			"difficulty" : 7,
+			"score" : 52.1
+		},
+		{
+			"difficulty" : 2,
+			"score" : 74.3
+		},
+		{
+			"difficulty" : 5,
+			"score" : 53.1
+		}
+	]
+}
+{
+	"_id" : ObjectId("5d84de2dc3088249d192f650"),
+	"name" : "Maria",
+	"hobbies" : [
+		"Cooking",
+		"Skiing"
+	],
+	"age" : 29,
+	"examScores" : [
+		{
+			"difficulty" : 3,
+			"score" : 75.1
+		},
+		{
+			"difficulty" : 8,
+			"score" : 44.2
+		},
+		{
+			"difficulty" : 6,
+			"score" : 61.5
+		}
+	]
+}
+
+```
+
+push strings into array:
+```
+ db.friends.aggregate([
+    {
+        $group: { _id: { age: '$age'}, names: { $push: '$name' }}
+    }
+  ]).pretty()
+```
+
+result:
+```
+{ "_id" : { "age" : 30 }, "names" : [ "Manu" ] }
+{ "_id" : { "age" : 29 }, "names" : [ "Max", "Maria" ] }
+```
+
+push arrays into array:
+```
+ db.friends.aggregate([
+...     {
+...         $group: { _id: { age: '$age'}, allHobbies: { $push: '$hobbies' }}
+...     }
+...   ]).pretty()
+
+```
+
+result:
+```
+{
+	"_id" : {
+		"age" : 29
+	},
+	"allHobbies" : [
+		[
+			"Sports",
+			"Cooking"
+		],
+		[
+			"Cooking",
+			"Skiing"
+		]
+	]
+}
+{
+	"_id" : {
+		"age" : 30
+	},
+	"allHobbies" : [
+		[
+			"Eating",
+			"Data Analytics"
+		]
+	]
+}
+
+```
+
+**$unwind:**
+
+
+
 
 
 
