@@ -494,6 +494,40 @@ db.friends.aggregate([
 ]).pretty()
 ```
 
+**$match & $sort:**
+```
+db.persons.aggregate([
+    { $match: { gender: 'male'} },
+    { 
+        $project: { 
+            _id: 0, 
+            gender: 1, 
+            name: { $concat: ["$name.first", " ", "$name.last"]},
+            birthdate: '$dob.date'
+        }
+    },
+    { $sort: { birthdate: 1 } },
+    { $skip: 10 },
+    { $limit: 10 }
+]).pretty()
+```
+
+**$bucket:**
+```
+db.persons.aggregate([
+    {
+        $bucket: {
+            groupBy: '$dob.age',
+            boundaries: [18, 30, 40, 50, 60, 70, 80, 90, 120, 150],
+            output: {
+                numPersons: { $sum: 1 },
+                averageAge: { $avg: "$dob.age" }
+            }
+        }
+    }
+]).pretty()
+```
+
 
 
 
