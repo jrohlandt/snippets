@@ -426,6 +426,73 @@ result:
 
 **$unwind:**
 
+```
+db.friends.aggregate([
+    { $unwind: '$hobbies'},
+    {
+        $group: { 
+            _id: { age: '$age'}, 
+            numberOfFriends: { $sum: 1 }, // note because $unwind creates multiple documents, the $sum will be incorrect, so I don't you can count when doing unwind.
+            allHobbies: { $push: '$hobbies' }}
+    }
+  ]).pretty()
+```
+
+prevent duplicates array elements with $addToSet:
+```
+  db.friends.aggregate([
+    { $unwind: '$hobbies'},
+    {
+        $group: { 
+            _id: { age: '$age'}, 
+            allHobbies: { $addToSet: '$hobbies' }}
+    }
+  ]).pretty()
+```
+
+**$filter:**
+```
+
+  db.friends.aggregate([
+      {
+          $project: {
+              _id: 0,
+              scores: {
+                  $filter: {
+                      input: '$examScores',
+                      as: 'sc',
+                      cond: { $gt: ['$$sc.score', 60]}
+                  }
+              }
+          }
+      }
+  ]).pretty()
+```
+
+**$unwind with $sort:**
+```
+db.friends.aggregate([
+    {
+        $unwind: '$examScores'
+    },
+    {
+        $project: { name: 1, age: 1, score: "$examScores.score"},
+    },
+    {
+        $sort: { score: -1 }
+    },
+    {
+        $group: {
+            _id: '$_id',
+            name: { $first: '$name'},
+            highestExamScore: {$max: '$score'}
+        }
+    },
+    {
+        $sort: { highestExamScore: -1}
+    }
+]).pretty()
+```
 
 
 
