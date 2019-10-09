@@ -50,6 +50,14 @@ E.g. Processes running in a container can be found on the host system by running
 docker container top container_name
 ```
 
+###### Get config info of a container:
+```
+docker container inpsect container_name
+```
+Outputs a large json object. The inspect command includes a --format flag that is similar to [jq](https://stedolan.github.io/jq/) but it is just as easy to pipe the output of inspect to jq instead of learning another new parser.
+
+
+
 
 
 
