@@ -41,7 +41,7 @@ docker container rm -f id id container_name id
 ```
 Note: the -f flag tells docker to remove containers even if they are still running.
 
-### Processes and container info
+## Processes and container info
 
 The processes running in a Docker container are normal system processes and are visible on the host system.
 E.g. Processes running in a container can be found on the host system by running **ps aux | grep whatever**.
@@ -62,7 +62,7 @@ Outputs a large json object. The inspect command includes a --format flag that i
 docker container stats container_name
 ```
 
-### Shell
+## Shell
 
 Note: Docker can only use a shell if it is installed in the container.
 Many images come with bash or sh.
@@ -83,6 +83,67 @@ docker container exec --interactive --tty mycontainer bash
 ```
 docker container exec --interactive --tty mycontainer sh
 ```
+
+## Docker Networks
+
+###### Check which ports are mapped to a container:
+```
+docker container port mycontainer
+```
+
+###### Get container ip:
+
+with jq
+```
+docker container inspect mycontainer | jq '.[0] | .NetworkSettings.IPAddress'
+```
+or use -- format flag
+```
+docker container inspect --format '{{.NetworkSettings.IPAddress}}' mycontainer
+```
+
+###### Commands:
+
+* docker network create mynetwork --driver
+* docker network ls (list all networks)
+* docker network inspect mynetwork
+* docker network connect mynetwork mycontainer (attach a network to a container)
+* docker network disconnect
+
+###### Create a network:
+```
+docker network create mynetwork
+```
+Note: defaults to using the bridge driver.
+
+###### Attach a network to a container:
+```
+docker container run --network mynetwork
+```
+or 
+```
+docker network connect mynetwork mycontainer
+```
+
+###### Find which containers are connected to a network:
+```
+docker network inspect mynetwork | jq '.[0] | {Containers: [.Containers]}'
+```
+
+###### Find all the networks that a container is connected to:
+```
+docker container inspect mycontainer | jq '.[0] | {Networks: [.NetworkSettings.Networks]}'
+```
+
+###### Have one container ping another:
+```
+docker container exec --interactive --tty mycontainer ping myothercontainer
+```
+Note: the two containers need to be on the same network and they both need ping installed.
+
+
+
+
 
 
 
