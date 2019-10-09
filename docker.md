@@ -41,7 +41,8 @@ docker container rm -f id id container_name id
 ```
 Note: the -f flag tells docker to remove containers even if they are still running.
 
-### Processes and container info:
+### Processes and container info
+
 The processes running in a Docker container are normal system processes and are visible on the host system.
 E.g. Processes running in a container can be found on the host system by running **ps aux | grep whatever**.
 
@@ -60,6 +61,30 @@ Outputs a large json object. The inspect command includes a --format flag that i
 ```
 docker container stats container_name
 ```
+
+### Shell
+
+Note: Docker can only use a shell if it is installed in the container.
+Many images come with bash or sh.
+
+###### Start and access the shell of a container:
+```
+docker container run --interactive --tty nginx bash
+```
+Tip: use the --rm flag to automatically remove the container when exiting the bash shell.
+Very useful for quickly spinning up a container to test something and then having it automatically cleaned up when done.
+
+###### Access the shell of a container that is already running:
+```
+docker container exec --interactive --tty mycontainer bash
+```
+
+###### Access sh on a container:
+```
+docker container exec --interactive --tty mycontainer sh
+```
+
+
 
 
 
