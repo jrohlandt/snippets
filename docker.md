@@ -41,7 +41,7 @@ docker container rm -f id id container_name id
 ```
 Note: the -f flag tells docker to remove containers even if they are still running.
 
-###### Processes:
+### Processes and container info:
 The processes running in a Docker container are normal system processes and are visible on the host system.
 E.g. Processes running in a container can be found on the host system by running **ps aux | grep whatever**.
 
@@ -55,6 +55,13 @@ docker container top container_name
 docker container inpsect container_name
 ```
 Outputs a large json object. The inspect command includes a --format flag that is similar to [jq](https://stedolan.github.io/jq/) but it is just as easy to pipe the output of inspect to jq instead of learning another new parser.
+
+###### Get performance stats (like Linux top):
+```
+docker container stats container_name
+```
+
+
 
 
 
