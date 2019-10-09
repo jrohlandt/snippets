@@ -141,6 +141,24 @@ docker container exec --interactive --tty mycontainer ping myothercontainer
 ```
 Note: the two containers need to be on the same network and they both need ping installed.
 
+### Images:
+
+###### List images:
+```
+docker image ls
+```
+
+###### Download image:
+```
+docker pull nginx 
+```
+Note: fetches latest version use tag to get a specific version. E.g. nginx:1.11.9
+
+###### See changes to image:
+```
+docker history nginx:latest
+```
+
 
 
 
