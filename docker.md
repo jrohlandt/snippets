@@ -35,5 +35,24 @@ docker container logs mynginx
 ```
 In this case it will output the nginx access logs.
 
+###### Remove container/s:
+```
+docker container rm -f id id container_name id
+```
+Note: the -f flag tells docker to remove containers even if they are still running.
+
+###### Processes:
+The processes running in a Docker container are normal system processes and are visible on the host system.
+E.g. Processes running in a container can be found on the host system by running **ps aux | grep whatever**.
+
+###### Find only the processes of one container:
+```
+docker container top container_name
+```
+
+
+
+
+
 
 
