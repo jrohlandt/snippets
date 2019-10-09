@@ -159,6 +159,19 @@ Note: fetches latest version use tag to get a specific version. E.g. nginx:1.11.
 docker history nginx:latest
 ```
 
+###### Get image info:
+```
+docker image inspect nginx:latest
+```
+Prints a json object.
+
+Example, see which ports are exposed:
+```
+docker image inspect nginx:latest | jq '.[0] | {ExposedPorts: .Config.ExposedPorts}'
+```
+
+
+
 
 
 
