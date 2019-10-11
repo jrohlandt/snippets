@@ -206,7 +206,9 @@ docker container run -d --name mynginx --volume /home/me/code/myproject/public:/
 ```
 
 ### Docker Compose
-https://docs.docker.com/compose/
+https://docs.docker.com/compose/ https://docs.docker.com/compose/compose-file/
+
+
 
 
 
