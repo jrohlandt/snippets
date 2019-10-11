@@ -170,6 +170,28 @@ Example, see which ports are exposed:
 docker image inspect nginx:latest | jq '.[0] | {ExposedPorts: .Config.ExposedPorts}'
 ```
 
+# TODO go back to the image building section, rewatch and make notes.
+
+### Persistent Data
+
+#### Volumes:
+Volume can be specified in the Dockerfile, can be checked using inspect (or just check Dockerfile).
+```
+docker inspect mysql | jq ' .[0] | .ContainerConfig.Volumes '
+```
+
+Can also be checked on a container running off that image:
+```
+docker container inspect mymysql | jq ' .[0] | .Config.Volumes '
+```
+
+and then one can also see exactly where the file/s are stored
+```
+docker container inspect mymysql | jq ' .[0] | .Mounts '
+```
+
+
+
 
 
 
