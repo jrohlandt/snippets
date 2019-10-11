@@ -190,6 +190,26 @@ and then one can also see exactly where the file/s are stored
 docker container inspect mymysql | jq ' .[0] | .Mounts '
 ```
 
+###### List all volumes:
+```
+docker volume ls
+```
+
+###### Named volumes:
+```
+docker container run -d --name mymysql --volume mymysql-db:/var/lib/mysql mysql
+```
+
+#### Bind mounts:
+```
+docker container run -d --name mynginx --volume /home/me/code/myproject/public:/usr/share/nginx/html -p 80:80 nginx
+```
+
+### Docker Compose
+https://docs.docker.com/compose/
+
+
+
 
 
 
