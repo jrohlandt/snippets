@@ -45,3 +45,8 @@ format code  extension  resolution note
 main64@mycomputerok:~$ /usr/local/bin/youtube-dl "https://www.youtube.com/watch?v=2UlBzmRigOU" -f 140
 
 ```
+
+## Best audio:
+```
+youtube-dl "https://www.youtube.com/watch?v=rJBVF-nrOjE" -f 137+bestaudio
+```
