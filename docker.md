@@ -200,6 +200,15 @@ docker volume ls
 docker container run -d --name mymysql --volume mymysql-db:/var/lib/mysql mysql
 ```
 
+##### How you could replace a container in development and still keep the data it was using.
+```
+docker container run -p 3307:3306 -d --name my_mysql -v my_mysql_data:/var/lib/mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql:5.7.26
+docker container stop my_mysql
+docker container rm my_mysql
+docker container run -p 3307:3306 -d --name my_mysql -v my_mysql_data:/var/lib/mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql:5.7.29
+
+```
+
 #### Bind mounts:
 ```
 docker container run -d --name mynginx --volume /home/me/code/myproject/public:/usr/share/nginx/html -p 80:80 nginx
