@@ -1,5 +1,13 @@
 # MySQL
 
+### Create a new user
+```
+mysql> CREATE USER 'me'@'localhost' IDENTIFIED BY 'my_new_password';
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'me'@'localhost' WITH GRANT OPTION;
+mysql> FLUSH PRIVILEGES;
+```
+https://stackoverflow.com/questions/33991228/what-is-the-default-root-pasword-for-mysql-5-7
+
 ### Reset Root Password
 http://stackoverflow.com/questions/10895163/how-to-find-out-the-mysql-root-password
 
