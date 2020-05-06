@@ -46,7 +46,12 @@ main64@mycomputerok:~$ /usr/local/bin/youtube-dl "https://www.youtube.com/watch?
 
 ```
 
-## Best audio:
+## Video with Best audio:
 ```
 youtube-dl "https://www.youtube.com/watch?v=rJBVF-nrOjE" -f 137+bestaudio
+```
+
+## Audio only MP3 (best audio):
+```
+youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 "https://www.youtube.com/watch?v=tHInaalwrDk"
 ```
