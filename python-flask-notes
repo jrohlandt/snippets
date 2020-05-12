@@ -8,3 +8,13 @@ $ sudo apt install python3.8
 $ sudo apt install python3.8-venv
 
 ```
+
+### Setup project and venv:
+```
+$ mkdir my-flask-project && cd my-flask-project
+$ mkdir project
+$ python3.8 -m venv env
+$ source env/bin/activate
+(env)$ pip install flask==1.1.1
+(env)$ pip install flask-restx==0.1.1 --user
+```
