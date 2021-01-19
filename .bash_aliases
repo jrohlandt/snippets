@@ -17,7 +17,7 @@ alias gl='git log'
 alias gd='git diff'
 
 # Projects
-alias wi='cd ~/code/wp_test/wp-content/plugins/webinarignition && nvm use && gb'
+alias easy='cd ~/code/dk/easyvsl-new && nvm use'
 
 # nginx
 alias e='cat /var/log/nginx/error.log'
@@ -26,4 +26,6 @@ alias t='clear && tail --lines=100 /var/log/nginx/error.log'
 # mysql 
 alias tailmysql='sudo tail -f /var/log/mysql/query.log'
 
+#Other
+alias e='cd ~/code/exercise-tracker && python main.py'
 
