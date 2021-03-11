@@ -52,6 +52,17 @@ Write updater code and call updater when app is ready.
 2. Create a draft release
 3. Update the repository field in package.json to that repo url.
 4. Run:
+
+### First set Github access token:
+
+Windows: 
+```
+setx GH_TOKEN mytoken
+```
+Mac/Linux: 
+```
+export GH_TOKEN=mytoken
+```
 ```
 electron-builder -wm --publish 'onTagOrDraft'
 ```
