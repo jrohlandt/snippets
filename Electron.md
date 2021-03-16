@@ -91,7 +91,7 @@ sudo spctl --master-disable
 
 To check if the installed app is notarized, run:
 ```
-sudo spctl --assess /Applications/myapp.app
+sudo spctl -v --assess /Applications/myapp.app
 ```
 If it is not notarized the result will be "rejected".
 Note: apps are installed in /Applications not ~/Applications
@@ -150,7 +150,7 @@ appleId='me@example.com' appleIdPassword='myappleidpassword' electron-builder -m
 
 Then reinstall app from dist dir and run:
 ```
-sudo spctl --assess /Applications/myapp.app
+sudo spctl -v --assess /Applications/myapp.app
 ```
 If all went well the result should say "accepted"
 
