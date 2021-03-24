@@ -1,5 +1,10 @@
 # Electron
 
+
+## File locations
+resources
+Win: C:\Users\user\AppData\Local\Programs\appname\resources
+Mac: 
 ## Electron Builder
 
 ### Building on Windows
@@ -145,8 +150,16 @@ module.exports = async function (context) {
 
 Then run:
 ```
-appleId='me@example.com' appleIdPassword='myappleidpassword' electron-builder -m
+appleId=me@example.com appleIdPassword=myappleidpassword electron-builder -m
+
+// or
+
+export appleId=me@example.com 
+export appleIdPassword=myappleidpassword 
+electron-builder -m
 ```
+
+From my tests notarization takes between 6 and 10 minutes.
 
 Then reinstall app from dist dir and run:
 ```
