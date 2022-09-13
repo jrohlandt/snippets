@@ -1,0 +1,42 @@
+For this example I'm using the electron-builder npm package but this is not an in detail write up about configuring electron-builder. It is about the Apple codesigning 
+and notarization process.
+
+
+The first thing that is needed is a "Developer ID Application" certificate.
+
+To publish the app on your own behalf you need to be enrolled in the apple developer program (paid account) and then in XCode go to preferences -> accounts.
+Then add your apple id.
+Go to manage certificates and then create a "Developer ID Aplication" certificate.
+I can't remember what that all entails anymore last time I did it was 2 years ago.
+
+But to publish a app on behalf of a client:
+1. You don't need a paid developer account. Just register or sign into developer.apple.com with your appleId
+2. Your client will have to be registered as a business with Apple (and I think they need the more expensive developer account).
+3. They need to generate a "Developer ID Application certificate on their own Mac.
+4. Then they need to export that certificate from their keychain and send it to you and you have to import it into a keychain on your Mac.
+
+To export the certificate from your clients machine.
+1. Open keychain access and search for "Developer ID Application"
+2. There could be more than one and which one to use is unclear so you might have try them all.
+3. There are two parts of the certificate. The certificate itself (has a certificate icon) and a private key (has a key icon) and they need to be exported as a pair (one file).
+4. Select both the certificate and the private key then right click and select export.
+5. On the dialog that appears give it a name and make sure it is saved as .p12 file.
+   - You will be asked for a password. That is a new password that you will use to open/use this certificate (so make one up).
+   - It will also ask for the login password of the clients machine but that is just give permission to export the certificate and will not be needed again.
+ 6. Check that the .p12 contains the certificate and private key (E.g. with OpenSSL):
+   - Open terminal and type: openssl pkcs12 -in /path/to/file.p12
+   - It will ask for the certificate password. Type it in and it should print out the certificate with a heading like "BEGIN CERTIFICATE".
+   - It should ask for the certificate again. Type it in again and it should print the private key with a heading like "BEGIN ENCRYPTED PRIVATE KEY".
+   - If you can see the certificate and the private key then you are ready to import the key on your Mac.
+
+To import the certificate on your Mac:
+1. Copy the .p12 file to your Mac.
+2. Open Keychain Access.
+3. Create a new keychain (I use the client/company name) and give it a password.
+4. With that new keychain selected. Go to File at the top and select import items.
+  - Navigate to the .p12 and follow the prompts. It will ask for the certificate password that you created when exporting.
+  - Afterwards you should see two new items in the keychain (certificate and private key).
+5. Now when you run electron-builder it will ask for the keychain password (not the certificate password) and you can select "Always Allow" but it might still
+ask for the keychain password every time you run electron-builder.
+
+
