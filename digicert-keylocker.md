@@ -32,7 +32,8 @@ In my case it was C:\Program Files\DigiCert\Click-to-sign
 The path also needs to be added.
 In windows search bar search for environment variables. 
 Choose edit environment values and then edit the path variable by adding e.g C:\Program Files\DigiCert\Click-to-sign
-## singn a file
+
+## sign a file
 Right click a file in windows explorer then choose more options and then click to sign.
 
 ## Logs
