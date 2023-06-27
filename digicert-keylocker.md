@@ -29,9 +29,15 @@ slotListIndex=0
 Put it in the same directory as the PKCS11 library. 
 In my case it was C:\Program Files\DigiCert\Click-to-sign
 
-The path also needs to be added.
+## Add paths
 In windows search bar search for environment variables. 
-Choose edit environment values and then edit the path variable by adding e.g C:\Program Files\DigiCert\Click-to-sign
+Choose edit environment values and under system select path then edit.
+I ended up having to add a few paths:
+Most importantly C:\Program Files\DigiCert\DigiCert Keylocker Tools (which contains smctl.exe).
+To check if smctl is working and in path run smctl healthcheck from anywhere in powershell.
+Other paths I added are:
+C:\Program Files\DigiCert\Click-to-sign and C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64 (for Windows SDK signtool).
+
 
 ## sign a file
 Right click a file in windows explorer then choose more options and then click to sign.
