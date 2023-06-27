@@ -29,6 +29,15 @@ slotListIndex=0
 Put it in the same directory as the PKCS11 library. 
 In my case it was C:\Program Files\DigiCert\Click-to-sign
 
+The path also needs to be added.
+In windows search bar search for environment variables. 
+Choose edit environment values and then edit the path variable by adding e.g C:\Program Files\DigiCert\Click-to-sign
+## singn a file
+Right click a file in windows explorer then choose more options and then click to sign.
+
+## Logs
+Can be found in C:\Users\jrohl\.signingmanager\logs (but looks like it only shows logs from when the smctl.exe is run from powershell).
+
 ## electron-builder config
 see: https://docs.digicert.com/en/digicert-keylocker/signing-tools/sign-java-with-electron-builder-using-pkcs11-integration.html
 
