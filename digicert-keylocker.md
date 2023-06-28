@@ -1,4 +1,5 @@
-## 
+#### Create api token and auth certifcate
+In digicert one create api token, as well as auth certificate and password
 
 
 
@@ -9,37 +10,48 @@
 
 
 
-
-## Install the DigiCert​​®​​ Software Trust Manager PKCS11 library
+#### Install the DigiCert​​®​​ Software Trust Manager PKCS11 library
 see: https://docs.digicert.com/en/software-trust-manager/tools/cryptographic-libraries-and-frameworks/pkcs11-library.html
 
-Install the library 
-Which in this case is the Digicert Click to Sign tool.
+1. Install the library 
+Which in this case is the "Digicert Click to Sign" tool.
+
+
+2. Run the configuration wizard:  
 When I installed it at first nothing happened. It just installed and then went away.
 Eventually I found it in  C:\Program Files\DigiCert\Click-to-sign (along with the Keylocker installation) and I ran it from there.
 It presented a configuration wizard and I had to supply my one.digicert.com api key as well as my client certificate and certificate password.
 
-Then create a config file named pkcs11properties.cfg:
+5. Then create a config file named **pkcs11properties.cfg**:
 ```
 name=signingmanager 
 library="C:\\Program Files\\DigiCert\\DigiCert Keylocker Tools\\smpkcs11.dll"
 slotListIndex=0
 ```
 
-Put it in the same directory as the PKCS11 library. 
+3. Put **pkcs11properties.cfg** in the same directory as the PKCS11 library. 
 In my case it was C:\Program Files\DigiCert\Click-to-sign
 
-## Add paths
-In windows search bar search for environment variables. 
-Choose edit environment values and under system select path then edit.
-I ended up having to add a few paths:
-Most importantly C:\Program Files\DigiCert\DigiCert Keylocker Tools (which contains smctl.exe).
+
+#### Add path/s
+1. In windows search bar search for environment variables. 
+2. Choose edit environment values and under system select path then edit.
+
+Add the following paths:
+1. Most importantly **C:\Program Files\DigiCert\DigiCert Keylocker Tools** (which contains smctl.exe).
+
+2. Other paths I added are:
+* C:\Program Files\DigiCert\Click-to-sign
+* C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64 (for Windows SDK signtool).
+
+#### Check if smctl is working
+Run the following command from anywere in Powershell:
+```
+smctl healthcheck
+```
+
 To check if smctl is working and in path run smctl healthcheck from anywhere in powershell.
-Other paths I added are:
-C:\Program Files\DigiCert\Click-to-sign and C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64 (for Windows SDK signtool).
-
-
-## sign a file
+#### sign a file
 Right click a file in windows explorer then choose more options and then click to sign.
 
 ## Logs
@@ -88,9 +100,4 @@ rm env:CSC_LINK
 
 If there are errors about "'smctl' is not recognized as an internal or external command,
 operable program or batch file."
-Then point then specify the full file path to smctl.exe:
-```
-`"C:\\Program Files\\DigiCert\\DigiCert Keylocker Tools\\smctl.exe" sign --keypair-alias=${keypair3} --config-file "C:\\Program Files\\DigiCert\\Click-to-sign\\pkc11.cfg" --input "${String(
-        configuration.path
-      )}"`
-```
+Then 
