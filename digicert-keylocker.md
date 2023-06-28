@@ -80,8 +80,12 @@ exports.default = async function(configuration) {
     
       require("child_process").execSync(
      
-        `smctl sign --keypair-alias=${keypair3} --config-file "${C:\Program Files\DigiCert\DigiCert One Signing Manager Tools\pkc11.cfg}" --input "${String(configuration.path)}"`
+        `smctl sign --keypair-alias=${process.env.SM_KP} --config-file "${C:\Program Files\DigiCert\DigiCert One Signing Manager Tools\pkc11.cfg}" --input "${String(configuration.path)}"`
         // I had to use --config-file "C:\\Program Files\\DigiCert\\Click-to-sign\\pkc11.cfg"
+        // Also when you installed the PKCS11 library and ran the config wizard
+        // it should create a bunch of environment variables
+        // the keypair alias is in SM_KP
+        // run "dir env:" to view variables
       );
     }
   };
