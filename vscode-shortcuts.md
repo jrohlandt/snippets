@@ -7,3 +7,4 @@
 * Toggle Terminal: CTRL + `
 * Focus Left Sidebar: CTRL + 0
 * Focus Text Editor: CTRL + 1
+* Fold All: CTRL + K, CTRL + 0
