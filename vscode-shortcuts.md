@@ -8,3 +8,6 @@
 * Focus Left Sidebar: CTRL + 0
 * Focus Text Editor: CTRL + 1
 * Fold All: CTRL + K, CTRL + 0
+* Unfold All CTRL + K, CTRL + J
+* Fold: CTRL + SHIFT + [
+* Unfold: CTRL + SHIFT + ]
