@@ -18,4 +18,5 @@
 # MacOS
 
 * nextEditor: Option + Cmd + -> 
-* move editor into next group: Cmd + Ctrl + -> 
+* move editor into next group: Cmd + Ctrl + ->
+* explorer open pass focus: Cmd + downArrow 
