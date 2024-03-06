@@ -12,3 +12,10 @@
 * Fold: CTRL + SHIFT + [
 * Unfold: CTRL + SHIFT + ]
 * Focus Editor Group (split pane): CTRL + 1, CTRL + 2 etc.
+
+
+
+# MacOS
+
+* nextEditor: Option + Cmd + -> 
+* move editor into next group: Cmd + Ctrl + -> 
