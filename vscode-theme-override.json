@@ -1,7 +1,6 @@
 {
   "editor.lineHeight": 24,
   "workbench.colorCustomizations": {
-  
       "editor.background": "#cdcdcd",
       "sideBar.background": "#c2c1c1",
       "tab.activeBackground": "#cdcdcd",
@@ -10,7 +9,7 @@
       "editorBracketHighlight.foreground1": "#6e6e6e",
       "editorBracketHighlight.foreground2": "#6e6e6e",
       "editorBracketHighlight.foreground3": "#6e6e6e",
-      "editorBracketMatch.background": "#898989", 
+      "editorBracketMatch.background": "#ececec",
   },
   "editor.tokenColorCustomizations": {
       "functions": "#6e6e6e",
@@ -20,5 +19,5 @@
       "strings": "#6e6e6e",
       "numbers": "#6e6e6e",
       "comments": "#6e6e6e",
-  }
+  },
 }
