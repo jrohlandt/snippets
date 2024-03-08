@@ -1,0 +1,3 @@
+Unity
+-------
+2D Pixel Perfect: https://blog.unity.com/games/2d-pixel-perfect-how-to-set-up-your-unity-project-for-retro-8-bits-games
