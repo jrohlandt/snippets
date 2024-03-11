@@ -1,11 +1,54 @@
 {
-     // Configures if the built-in PHP language suggestions are enabled. The support suggests PHP globals and variables.
-  "php.suggest.basic": false,
-  "workbench.colorTheme": "Slime",
-  "explorer.openEditors.visible": 0,
-  "editor.fontFamily": "'Source Code Pro', 'monospace', monospace, 'Droid Sans Fallback'",
-  "editor.fontSize": 14,
-  "editor.fontWeight": "normal",
-  "editor.lineHeight": 25
-
+    "godot_tools.gdscript_lsp_server_port": 6007,
+    "workbench.colorTheme": "Light (Visual Studio for Mac)",
+    "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": false,
+    "editor.lineNumbers": "interval",
+    "editor.minimap.enabled": false,
+    "workbench.tree.indent": 32,
+    "godot_tools.editor_path": "/Applications/Godot_4.2.1.app",
+    "godotTools.editorPath.godot3": "/Applications/Godot_4.2.1.app",
+    "godotTools.editorPath.godot4": "/Applications/Godot_4.2.1.app",
+    "godotTools.lsp.serverPort": 6007,
+    "dotnet.codeLens.enableReferencesCodeLens": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "git.confirmSync": false,
+    "editor.lineHeight": 24,
+    "workbench.colorCustomizations": {
+        "editor.background": "#cdcdcd",
+        "sideBar.background": "#c2c1c1",
+        "tab.activeBackground": "#cdcdcd",
+        "tab.inactiveBackground": "#c2c1c1",
+        "editorBracketHighlight.foreground1": "#6e6e6e",
+        "editorBracketHighlight.foreground2": "#6e6e6e",
+        "editorBracketHighlight.foreground3": "#6e6e6e",
+        "editorBracketMatch.background": "#ececec",
+        "editor.lineHighlightBackground": "#ececec49",
+        "editor.selectionBackground": "#ececec",
+        "editor.wordHighlightBackground": "#ececec7f",
+        "editor.wordHighlightStrongBackground": "#ececec7f",
+        "editor.selectionHighlightBackground": "#ececec7f",
+        "editor.hoverHighlightBackground": "#ececec7f",
+        "editor.findMatchHighlightBackground": "#ecececd1",
+        
+        // separators extension
+        "separators.classes.borderColor": "#a8a8a8",  
+        "separators.constructors.borderColor": "#a8a8a8",  
+        "separators.enums.borderColor": "#a8a8a8",  
+        "separators.functions.borderColor": "#a8a8a8",  
+        "separators.interfaces.borderColor": "#a8a8a8",  
+        "separators.methods.borderColor": "#a8a8a8",  
+        "separators.namespaces.borderColor": "#a8a8a8",  
+        "separators.structs.borderColor": "#a8a8a8",
+    },
+    "editor.tokenColorCustomizations": {
+        "functions": "#313131",
+        "variables": "#313131",
+        "keywords": "#313131",
+        "types": "#313131",
+        "strings": "#313131",
+        "numbers": "#313131",
+        "comments": "#848484",
+        
+    },
+   
 }
