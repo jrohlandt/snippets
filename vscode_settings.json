@@ -29,6 +29,10 @@
         "editor.selectionHighlightBackground": "#ececec7f",
         "editor.hoverHighlightBackground": "#ececec7f",
         "editor.findMatchHighlightBackground": "#ecececd1",
+        "editorHoverWidget.background": "#ececec",
+        
+        "quickInput.background": "#ececec",
+        "quickInputList.focusBackground": "#c2c1c1",
         
         // separators extension
         "separators.classes.borderColor": "#a8a8a8",  
@@ -39,6 +43,7 @@
         "separators.methods.borderColor": "#a8a8a8",  
         "separators.namespaces.borderColor": "#a8a8a8",  
         "separators.structs.borderColor": "#a8a8a8",
+        
     },
     "editor.tokenColorCustomizations": {
         "functions": "#313131",
