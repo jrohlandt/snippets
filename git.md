@@ -1,5 +1,9 @@
 # Git
 
+### Ingore all glb files 
+1. add .gitignore in Assets folder with *.glb inside
+2. git rm --cached Assets/*.glb
+3. Commit and push
 
 ## Staging
 ### Remove file from staging:
