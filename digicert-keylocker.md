@@ -1,13 +1,7 @@
 #### Create api token and auth certifcate
 In digicert one create api token, as well as auth certificate and password
 
-
-
-
-
-
-
-
+See https://docs.digicert.com/en/digicert-keylocker/get-started.html
 
 
 #### Install the DigiCert​​®​​ Software Trust Manager PKCS11 library
@@ -16,8 +10,13 @@ see: https://docs.digicert.com/en/software-trust-manager/tools/cryptographic-lib
 1. Install the library 
 Which in this case is the "Digicert Click to Sign" tool.
 
+Download Keylocker installer from your account at one.digicert.com.
+After installing you will see Click to sign in C:\Program Files\Digicert. Run the .exe and complete the wizard.
 
-2. Run the configuration wizard:  
+Also install SignTool https://docs.digicert.com/en/digicert-keylocker/sign-with-digicert-signing-tools/third-party-signing-tool-integrations/signtool.html
+
+
+3. Run the configuration wizard:  
 When I installed it at first nothing happened. It just installed and then went away.
 Eventually I found it in  C:\Program Files\DigiCert\Click-to-sign (along with the Keylocker installation) and I ran it from there.
 It presented a configuration wizard and I had to supply my one.digicert.com api key as well as my client certificate and certificate password.
